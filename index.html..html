@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<!-- saved from url=(0070)file:///C:/Users/stuf2014003818/Downloads/smart_health_plus%20(3).html -->
+<html lang="ar" dir="rtl"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Smart Health – Your Health, Your Future</title>
+<style>
+:root{--navy:#10324e;--blue:#247da5;--teal:#21a58c;--bg:#f1f7fa;--ink:#17354a;--muted:#668092;--line:#dfebf1}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(145deg,#eaf5fa,#f8fbfd);font-family:Tahoma,Arial,sans-serif;color:var(--ink)}
+.wrap{max-width:850px;margin:22px auto;padding:14px}header{border-radius:24px;padding:24px;color:white;background:linear-gradient(120deg,#102f4d,#187b9d 65%,#24a58e);box-shadow:0 12px 30px #153d5520;position:relative;overflow:hidden}
+header:after{content:"✦  ✧  ✦";position:absolute;left:20px;top:16px;font-size:26px;color:#b9f4ed;opacity:.7}
+.brand{font-size:12px;letter-spacing:1px;color:#c9f5ee}h1{margin:7px 0;font-size:29px}header p{line-height:1.7;margin:0;color:#e6f7fb}
+.top{display:flex;gap:9px;margin-top:17px;flex-wrap:wrap}.top button{background:#ffffff20;border:1px solid #ffffff55;color:white}
+button{border:0;border-radius:12px;padding:11px 14px;font-weight:bold;font-size:14px;cursor:pointer}.primary{background:var(--blue);color:white}.green{background:var(--teal);color:white}.soft{background:#eaf4f8;color:#165676}.red{background:#fff0ef;color:#a43c36}
+.card{background:white;border:1px solid var(--line);border-radius:18px;padding:18px;margin-top:14px;box-shadow:0 7px 22px #153b560c}
+h2{font-size:18px;margin:0 0 13px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+label{display:block;font-size:13px;font-weight:bold;margin-bottom:6px}input,select{width:100%;padding:11px;border:1px solid #cbdde7;border-radius:11px;font-size:15px;background:#fff;color:var(--ink)}
+.full{width:100%;margin-top:12px}.robotrow{display:flex;gap:14px;align-items:center}.robot{width:76px;height:76px;flex:none;border-radius:22px;background:linear-gradient(145deg,#dff7f3,#dceefa);display:grid;place-items:center;font-size:43px;position:relative}.robot:after{content:"";position:absolute;bottom:-5px;left:27px;width:22px;height:8px;border-radius:50%;background:#bdd9e3}
+.bubble{background:#eff8fb;border-radius:15px;padding:13px;line-height:1.7;flex:1}.muted{color:var(--muted);font-size:12px;line-height:1.6}.item{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:11px 0;border-bottom:1px solid #edf2f5}.item:last-child{border:0}.empty{text-align:center;padding:15px;color:var(--muted)}
+.actions{display:flex;gap:7px;flex-wrap:wrap}.points{font-size:25px;font-weight:bold;color:#16846f}.challenge{border:1px solid var(--line);border-radius:13px;padding:12px;margin:8px 0;display:flex;align-items:center;justify-content:space-between;gap:9px}.challenge.done{background:#f0faf6;border-color:#b9e8d9}.challenge button{white-space:nowrap}
+.answer{background:#f0f7fa;border-radius:13px;padding:13px;line-height:1.8;margin-top:10px;min-height:45px}
+.note{background:#fff8e8;color:#765a22;padding:12px;border-radius:12px;font-size:12px;line-height:1.8;margin-top:13px}
+footer{text-align:center;color:#78909e;font-size:11px;padding:18px}
+@media(max-width:560px){.grid{grid-template-columns:1fr}.wrap{margin:4px auto;padding:10px}.robotrow{align-items:flex-start}h1{font-size:24px}}
+</style>
+</head>
+<body><div class="wrap">
+<header>
+ <div class="brand">UAE • HEALTH • INNOVATION</div>
+ <h1>🤖 Smart Health</h1>
+ <p id="tagline">صحتك، مستقبلك — مساعدك الذكي للعادات الصحية والتذكيرات اليومية.</p>
+ <div class="top"><button id="langBtn">English</button><button id="voiceBtn">🔊 تشغيل صوت الروبوت</button></div>
+</header>
+
+<section class="card">
+ <div class="robotrow">
+  <div class="robot">🤖</div>
+  <div class="bubble"><strong id="robotTitle">مرحباً! أنا روبوت الصحة.</strong><div id="robotText">أقدر أساعدك تتذكر مواعيدك وتتعلم عادات صحية. اختَر ميزة وابدأ!</div></div>
+ </div>
+</section>
+
+<section class="card">
+ <h2 id="remTitle">💊 تذكير الدواء</h2>
+ <form id="form">
+  <div class="grid">
+   <div><label id="nameLabel" for="med">اسم الدواء أو التذكير</label><input id="med" maxlength="50" placeholder="مثال: تذكير الصباح" required=""></div>
+   <div><label id="timeLabel" for="time">الوقت</label><input id="time" type="time" required=""></div>
+   <div><label id="repeatLabel" for="repeat">التكرار</label><select id="repeat"><option value="daily">كل يوم</option><option value="once">مرة واحدة اليوم</option></select></div>
+   <div><label id="soundLabel" for="sound">صوت التنبيه</label><select id="sound"><option value="beep">نغمة قصيرة</option><option value="chime">نغمة هادئة</option><option value="voice">صوت الروبوت</option><option value="silent">بدون صوت</option></select></div>
+  </div>
+  <button class="primary full" type="submit" id="saveBtn">حفظ التذكير</button>
+ </form>
+ <div class="actions" style="margin-top:10px"><button class="soft" id="notifyBtn">🔔 تفعيل إشعارات الجهاز</button></div>
+ <div id="reminders" class="empty">لا توجد تذكيرات بعد.</div>
+</section>
+
+<section class="card">
+ <h2 id="challengeTitle">🏆 تحديات صحية ونقاط</h2>
+ <div><span class="points" id="points">0</span> <span id="pointsLabel">نقطة</span></div>
+ <div class="muted" id="challengeHint">أكمل تحدياً صحياً تجريبياً لتحصل على 10 نقاط. يمكنك إعادة التحديات غداً.</div>
+ <div id="challenges"><div class="challenge"><span>⭐ اشرب كوب ماء</span><button class="green">أكملت</button></div><div class="challenge"><span>⭐ تحرك أو تمشّى 10 دقائق</span><button class="green">أكملت</button></div><div class="challenge"><span>⭐ اغسل يديك بالطريقة الصحيحة</span><button class="green">أكملت</button></div><div class="challenge"><span>⭐ تناول فاكهة أو خضار</span><button class="green">أكملت</button></div></div>
+</section>
+
+<section class="card">
+ <h2 id="askTitle">💬 اسأل روبوت الصحة</h2>
+ <div class="grid">
+  <div><label id="questionLabel" for="question">اختر سؤالاً صحياً</label>
+   <select id="question">
+    <option value="water">كم نحتاج نشرب ماء؟</option>
+    <option value="hand">متى نغسل أيدينا؟</option>
+    <option value="sleep">ليش النوم مهم؟</option>
+    <option value="movement">ليش الحركة مهمة؟</option>
+    <option value="food">شو يعني وجبة متوازنة؟</option>
+    <option value="medicine">كيف أستخدم الدواء بأمان؟</option>
+   </select>
+  </div>
+  <div style="display:flex;align-items:end"><button class="green full" id="askBtn">اسأل الروبوت</button></div>
+ </div>
+ <div class="answer" id="answer">🤖 اختَر سؤالاً واضغط «اسأل الروبوت».</div>
+</section>
+
+<section class="card">
+ <h2 id="soundTitle">🎵 تجربة الأصوات</h2>
+ <div class="grid">
+  <div><label id="testSoundLabel" for="testSound">اختيار النغمة</label><select id="testSound"><option value="beep">نغمة قصيرة</option><option value="chime">نغمة هادئة</option><option value="voice">صوت الروبوت</option></select></div>
+  <div style="display:flex;align-items:end"><button class="soft full" id="testBtn">▶ تجربة الصوت</button></div>
+ </div>
+ <div class="muted" id="soundHint">قد تحتاج السماح بالصوت أو الإشعارات من المتصفح.</div>
+</section>
+<div class="note" id="safety">تنبيه مهم: هذا تطبيق تعليمي لمشروع المدرسة وليس جهازاً طبياً أو بديلاً عن الطبيب. لا يحدد الجرعات أو مواعيد الدواء. أدخل فقط التذكيرات التي حددها الطبيب أو الصيدلي. اترك الصفحة مفتوحة حتى تعمل التنبيهات، ولا تعتمد عليه وحده لتناول الدواء.</div>
+<footer>Smart Health • School Health Project</footer>
+</div>
+<script>
+const $=id=>document.getElementById(id);
+let lang='ar', reminders=JSON.parse(localStorage.getItem('sh_reminders')||'[]');
+let points=Number(localStorage.getItem('sh_points')||0);
+let done=JSON.parse(localStorage.getItem('sh_done')||'{}');
+const fired=new Set();
+const T={
+ ar:{tag:'صحتك، مستقبلك — مساعدك الذكي للعادات الصحية والتذكيرات اليومية.',rt:'مرحباً! أنا روبوت الصحة.',rx:'أقدر أساعدك تتذكر مواعيدك وتتعلم عادات صحية. اختَر ميزة وابدأ!',rem:'💊 تذكير الدواء',name:'اسم الدواء أو التذكير',time:'الوقت',repeat:'التكرار',sound:'صوت التنبيه',daily:'كل يوم',once:'مرة واحدة اليوم',save:'حفظ التذكير',notify:'🔔 تفعيل إشعارات الجهاز',none:'لا توجد تذكيرات بعد.',challenge:'🏆 تحديات صحية ونقاط',point:'نقطة',hint:'أكمل تحدياً صحياً تجريبياً لتحصل على 10 نقاط. يمكنك إعادة التحديات غداً.',ask:'💬 اسأل روبوت الصحة',question:'اختر سؤالاً صحياً',askbtn:'اسأل الروبوت',soundTitle:'🎵 تجربة الأصوات',testSound:'اختيار النغمة',test:'▶ تجربة الصوت',soundHint:'قد تحتاج السماح بالصوت أو الإشعارات من المتصفح.',safety:'تنبيه مهم: هذا تطبيق تعليمي لمشروع المدرسة وليس جهازاً طبياً أو بديلاً عن الطبيب. لا يحدد الجرعات أو مواعيد الدواء. أدخل فقط التذكيرات التي حددها الطبيب أو الصيدلي. اترك الصفحة مفتوحة حتى تعمل التنبيهات، ولا تعتمد عليه وحده لتناول الدواء.',del:'حذف',remind:'حان وقت التذكير: ',dailyOpt:'كل يوم',onceOpt:'مرة واحدة',water:'كم نحتاج نشرب ماء؟',hand:'متى نغسل أيدينا؟',sleep:'ليش النوم مهم؟',movement:'ليش الحركة مهمة؟',food:'شو يعني وجبة متوازنة؟',medicine:'كيف أستخدم الدواء بأمان؟',answer0:'🤖 اختَر سؤالاً واضغط «اسأل الروبوت».',challenges:['اشرب كوب ماء','تحرك أو تمشّى 10 دقائق','اغسل يديك بالطريقة الصحيحة','تناول فاكهة أو خضار'],answers:{water:'احتياج الماء يختلف حسب العمر والطقس والنشاط. اشرب بانتظام، وزِد شرب الماء عند الحر أو التمرين. اتبع نصيحة مختصك إذا لديك تقييد للسوائل.',hand:'اغسل يديك قبل الأكل وبعد استخدام الحمام، وبعد السعال أو العطاس، وعندما تكون متسخة. استخدم الماء والصابون لمدة 20 ثانية تقريباً.',sleep:'النوم يساعد الجسم والدماغ على الراحة والتعلم والنمو. حاول الالتزام بوقت نوم منتظم يناسب عمرك.',movement:'الحركة تدعم القلب والعضلات والعظام والمزاج. اختر نشاطاً آمناً وممتعاً يناسبك.',food:'الوجبة المتوازنة تجمع عادةً الخضار أو الفاكهة، ومصدراً للبروتين، وحبوباً أو نشويات، مع الماء.',medicine:'استخدم الدواء فقط حسب تعليمات الطبيب أو الصيدلي والملصق. لا تغيّر الجرعة ولا تشارك دواءك مع الآخرين.'}},
+ en:{tag:'Your health, your future — your smart helper for healthy habits and reminders.',rt:'Hello! I am your Health Robot.',rx:'I can help you remember reminders and learn healthy habits. Choose a feature to begin!',rem:'💊 Medicine Reminder',name:'Medicine or reminder name',time:'Time',repeat:'Repeat',sound:'Reminder sound',daily:'Every day',once:'Today only',save:'Save reminder',notify:'🔔 Enable device notifications',none:'No reminders yet.',challenge:'🏆 Health Challenges & Points',point:'points',hint:'Complete a sample health challenge to earn 10 points. Challenges reset tomorrow.',ask:'💬 Ask Your Health Robot',question:'Choose a health question',askbtn:'Ask the robot',soundTitle:'🎵 Sound test',testSound:'Choose a sound',test:'▶ Test sound',soundHint:'Your browser may ask permission for sound or notifications.',safety:'Important: This is an educational school project, not a medical device or a replacement for a healthcare professional. It does not set doses or medication schedules. Enter only reminders given by a doctor or pharmacist. Keep this page open for reminders, and never rely on it alone to take medicine.',del:'Delete',remind:'Reminder time: ',dailyOpt:'Every day',onceOpt:'Once',water:'How much water should we drink?',hand:'When should we wash our hands?',sleep:'Why is sleep important?',movement:'Why is movement important?',food:'What is a balanced meal?',medicine:'How can I use medicine safely?',answer0:'🤖 Choose a question and tap “Ask the robot”.',challenges:['Drink a glass of water','Move or walk for 10 minutes','Wash your hands properly','Eat a fruit or vegetable'],answers:{water:'Water needs vary with age, weather and activity. Drink regularly, and drink more in hot weather or during exercise. Follow a clinician’s advice if you have fluid restrictions.',hand:'Wash before eating, after using the toilet, after coughing or sneezing, and whenever hands are dirty. Use soap and water for about 20 seconds.',sleep:'Sleep helps your body and brain rest, learn and grow. Try to keep a regular sleep schedule that suits your age.',movement:'Movement supports your heart, muscles, bones and mood. Choose safe activities you enjoy.',food:'A balanced meal often includes vegetables or fruit, a protein source, grains or other carbohydrates, and water.',medicine:'Use medicine only as directed by your doctor or pharmacist and the label. Do not change doses or share medicine.'}}
+};
+function t(k){return T[lang][k]}
+function persist(){localStorage.setItem('sh_reminders',JSON.stringify(reminders))}
+function renderReminders(){
+ const el=$('reminders');el.innerHTML='';
+ if(!reminders.length){el.className='empty';el.textContent=t('none');return}
+ el.className='';
+ reminders.sort((a,b)=>a.time.localeCompare(b.time)).forEach(r=>{
+  const row=document.createElement('div');row.className='item';const info=document.createElement('div');
+  const strong=document.createElement('strong');strong.textContent=r.name;
+  const meta=document.createElement('div');meta.className='muted';meta.textContent=r.time+' · '+(r.repeat==='daily'?t('dailyOpt'):t('onceOpt'));
+  info.append(strong,meta);const del=document.createElement('button');del.className='red';del.textContent=t('del');del.onclick=()=>{reminders=reminders.filter(x=>x.id!==r.id);persist();renderReminders()};
+  row.append(info,del);el.append(row);
+ });
+}
+function renderChallenges(){
+ $('points').textContent=points;$('challenges').innerHTML='';
+ T[lang].challenges.forEach((label,i)=>{
+  const row=document.createElement('div');row.className='challenge'+(done[i]?' done':'');
+  const span=document.createElement('span');span.textContent=(done[i]?'✅ ':'⭐ ')+label;
+  const btn=document.createElement('button');btn.className=done[i]?'soft':'green';btn.textContent=done[i]?(lang==='ar'?'مكتمل':'Done'):(lang==='ar'?'أكملت':'Complete');
+  btn.disabled=!!done[i];btn.onclick=()=>{done[i]=true;points+=10;localStorage.setItem('sh_done',JSON.stringify(done));localStorage.setItem('sh_points',points);renderChallenges();robotSay(lang==='ar'?'أحسنت! حصلت على 10 نقاط.':'Great job! You earned 10 points.')};
+  row.append(span,btn);$('challenges').append(row);
+ });
+}
+function robotSay(msg){
+ $('robotText').textContent=msg;
+ if('speechSynthesis'in window){speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(msg);u.lang=lang==='ar'?'ar-AE':'en-US';u.rate=0.95;speechSynthesis.speak(u)}
+}
+function beep(kind){
+ if(kind==='silent')return;
+ if(kind==='voice'){robotSay(lang==='ar'?'حان وقت التذكير.':'It is reminder time.');return}
+ try{const ctx=new (window.AudioContext||window.webkitAudioContext)();const osc=ctx.createOscillator(),gain=ctx.createGain();osc.connect(gain);gain.connect(ctx.destination);osc.type='sine';osc.frequency.value=kind==='chime'?880:660;gain.gain.value=.12;osc.start();osc.stop(ctx.currentTime+(kind==='chime'?.55:.22));osc.onended=()=>ctx.close()}catch(e){}
+}
+$('form').onsubmit=e=>{e.preventDefault();reminders.push({id:Date.now(),name:$('med').value.trim(),time:$('time').value,repeat:$('repeat').value,sound:$('sound').value});persist();renderReminders();$('form').reset();robotSay(lang==='ar'?'تم حفظ التذكير بنجاح.':'Your reminder has been saved.')};
+$('notifyBtn').onclick=async()=>{if(!('Notification'in window)){alert('Notifications are not supported in this browser.');return}const p=await Notification.requestPermission();alert(p==='granted'?(lang==='ar'?'تم تفعيل الإشعارات':'Notifications enabled'):(lang==='ar'?'لم يتم السماح بالإشعارات':'Notifications were not allowed'))};
+$('voiceBtn').onclick=()=>robotSay(lang==='ar'?'مرحباً! أنا روبوت الصحة. أهتم بصحتك وأساعدك على تذكر عاداتك الصحية.':'Hello! I am your Health Robot. I help you remember healthy habits.');
+$('askBtn').onclick=()=>{const key=$('question').value;$('answer').textContent='🤖 '+T[lang].answers[key];robotSay(T[lang].answers[key])};
+$('testBtn').onclick=()=>beep($('testSound').value);
+function setLang(){
+ const x=T[lang];document.documentElement.lang=lang;document.documentElement.dir=lang==='ar'?'rtl':'ltr';
+ $('tagline').textContent=x.tag;$('robotTitle').textContent=x.rt;$('robotText').textContent=x.rx;
+ $('remTitle').textContent=x.rem;$('nameLabel').textContent=x.name;$('timeLabel').textContent=x.time;$('repeatLabel').textContent=x.repeat;$('soundLabel').textContent=x.sound;
+ $('repeat').options[0].text=x.daily;$('repeat').options[1].text=x.once;$('saveBtn').textContent=x.save;$('notifyBtn').textContent=x.notify;
+ $('challengeTitle').textContent=x.challenge;$('pointsLabel').textContent=x.point;$('challengeHint').textContent=x.hint;
+ $('askTitle').textContent=x.ask;$('questionLabel').textContent=x.question;$('askBtn').textContent=x.askbtn;
+ $('soundTitle').textContent=x.soundTitle;$('testSoundLabel').textContent=x.testSound;$('testBtn').textContent=x.test;$('soundHint').textContent=x.soundHint;$('safety').textContent=x.safety;
+ [...$('question').options].forEach(o=>o.text=x[o.value]);$('answer').textContent=x.answer0;
+ $('langBtn').textContent=lang==='ar'?'English':'العربية';renderReminders();renderChallenges();
+}
+$('langBtn').onclick=()=>{lang=lang==='ar'?'en':'ar';setLang()};
+function tick(){
+ const now=new Date(),hm=String(now.getHours()).padStart(2,'0')+':'+String(now.getMinutes()).padStart(2,'0'),day=now.toDateString();
+ reminders.forEach(r=>{const id=day+'-'+hm+'-'+r.id;if(r.time===hm&&!fired.has(id)){fired.add(id);const msg=t('remind')+r.name;beep(r.sound);if('Notification'in window&&Notification.permission==='granted')new Notification('Smart Health',{body:msg});else if(r.sound==='silent')alert(msg);if(r.repeat==='once'){reminders=reminders.filter(x=>x.id!==r.id);persist();renderReminders()}}});
+}
+setLang();tick();setInterval(tick,1000);
+</script></body></html>
